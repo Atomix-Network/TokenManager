@@ -7,6 +7,7 @@ import lombok.Getter;
 import me.realized.tokenmanager.util.Placeholders;
 import me.realized.tokenmanager.util.StringUtil;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -62,7 +63,7 @@ public class Shop {
     }
 
     public void setSlot(final int slot, final ItemStack displayed, final Slot data) {
-        Placeholders.replace(displayed, data.getCost(), "price");
+        Placeholders.replace(null, displayed, data.getCost(), "price");
         inventory.setItem(slot, displayed);
 
         if (slots == null) {
